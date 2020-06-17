@@ -14,7 +14,7 @@ html {
 
 body {
     background-color: #f6e1e1;
-    font-family: 'Odibee Sans', cursive;
+    font-family: 'Sriracha', cursive, 'Roboto';
     min-height: 100%;   
 }
 
@@ -33,14 +33,14 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 2%;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
 }
 
 nav span {
     margin: 0 10px;
-    color: #eb4d55;
+    color: black;
     font-size: 22px;
-    font-family: 'Bellota', cursive;
+    font-family: 'Sriracha', cursive, 'Roboto';
     font-weight: 800;
 }
 
@@ -67,26 +67,25 @@ div.clock-container {
 
 h1 {    
     font-size: 4em;
-    font-family: 'Sriracha', cursive;
-    padding: 0 30px;
+    padding: 0 0.6em;
     background-color: #fc9d9d2f;
     border-radius: 4px;
     margin: 20px 0;
 }
 
 button.timer-options {
-    font-family: 'Roboto', sans-serif;    
+    font-family: 'Sriracha', sans-serif;    
     font-size: 20px;
     border-style: none;
     background-color:#333366d5;
     color: rgb(241, 237, 237);
-    padding: 8px 6px;
+    padding: 8px 8px;
     margin: 0px -1px;
     border-radius: 6px;
     
 }
 
-button.timer-options :active {
+button.timer-options:active {
     background-color: #333366ed;
     font-weight: 600;
     outline: none;
@@ -98,16 +97,11 @@ div.clock {
     align-items: center;
 }
 
-div.control-buttons {
-    display: flex;
-    justify-content: center;
-}
 .control-buttons-container button {
     font-family: 'Sriracha', cursive;    
     font-size: 20px;
     border-radius: 10px;
-    border-color: #ffcac2;
-    background-color: #f2aaaa;
+    background-color: #eb4d55c0;
     color: white;
     margin: 0 5px;
     border-style: none;
@@ -117,12 +111,16 @@ div.control-buttons {
 }
 
 button:active {
-    background-color: #333366;
-    box-shadow: black 2px;   
+    background-color: rgb(214, 134, 134);
 }
 
 button:focus {
     outline: none;
+}
+
+div.control-buttons {
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -139,7 +137,7 @@ footer {
     display: flex;
 }
 
-@media only screen and (min-width: 768px), screen and (max-width:1250px) {
+@media only screen and (min-width: 768px) {
     .wrapper {
         width: 600px;
         margin: 0 auto;
@@ -150,8 +148,24 @@ footer {
         width: 40px;
     }
 
-    .timer-options {
-        padding: 15px 15px;
+    nav span {
+        font-size: 35px;
+    }
+
+    .main div {
+        margin: 25px 0;
+    }
+
+    button.timer-options {
+        padding: 15px 20px;
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 6.6em;
+    }
+
+    .control-buttons-container button {
         font-size: 30px;
     }
 }
