@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 100%;
+    display: block;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #f6e1e1;
+    font-family: 'Odibee Sans', cursive;
+    min-height: 100%;   
+}
+
+.image-logo {
+    height: 30px;
+    width: 30px;
+}
+
+a {
+    color: white;
+    margin: 5px;  
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin-bottom: 20px;    
+}
+
+nav span {
+    margin: 0 10px;
+    color: #eb4d55;
+    font-size: 22px;
+    font-family: 'Bellota', cursive;
+    font-weight: 800;
+}
+
+div {
+    margin: 20px 0;
+}
+
+.timer-options-container, .control-buttons-container {
+    display: flex;
+    width: 100%;
+    justify-content: center; 
+}
+
+.timer-options-container {
+    display: flex;
+    justify-content: center;
+}
+
+div.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {    
+    font-size: 4em;
+    font-family: 'Sriracha', cursive;
+    padding: 0 30px;
+    background-color: #fc9d9d2f;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+button.timer-options {
+    font-family: 'Roboto', sans-serif;    
+    font-size: 20px;
+    border-style: none;
+    background-color:#333366d5;
+    color: rgb(241, 237, 237);
+    padding: 8px 6px;
+    margin: 0px -1px;
+    border-radius: 6px;
+    
+}
+
+button.timer-options :active {
+    background-color: #333366ed;
+    font-weight: 600;
+    outline: none;
+}
+
+div.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.control-buttons {
+    display: flex;
+    justify-content: center;
+}
+.control-buttons-container button {
+    font-family: 'Sriracha', cursive;    
+    font-size: 20px;
+    border-radius: 10px;
+    border-color: #ffcac2;
+    background-color: #f2aaaa;
+    color: white;
+    margin: 0 5px;
+    border-style: none;
+    padding: 6px 12px;
+    width: 5em;
+    
+}
+
+button:active {
+    background-color: #333366;
+    box-shadow: black 2px;   
+}
+
+button:focus {
+    outline: none;
+}
+
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    background-color: #333366;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    display: flex;
+}
+
+@media only screen and (min-width: 768px), screen and (max-width:1250px) {
+    .wrapper {
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .image-logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    .timer-options {
+        padding: 15px 15px;
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    .wrapper {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .image-logo {
+        height: 60px;
+        width: 60px;
+    }
+
+    nav span {
+        font-size: 45px;
+    }
+
+    h1 {
+        font-size: 8em;
+    }
+
+    button.timer-options {
+        padding: 20px 25px;
+        font-size: 32px;
+    }
+
+    .control-buttons-container button {
+        font-size: 30px;
+    }
+
+    footer {
+        font-size: 22px;
+    }
+}
+
