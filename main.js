@@ -4,15 +4,31 @@ const clickSound = new Audio("./resources/zapsplat_household_alarm_clock_large_s
 const timerAlarm = new Audio("./resources/zapsplat_household_alarm_clock_old_fashioned_ring_very_short_44062.mp3");
 const resetSound = new Audio("./resources/zapsplat_household_alarm_clock_button_press_12967.mp3");
 
-//DOM control buttons
+//DOM buttons and clockDisplay
 const playOrPauseButton = document.getElementById('play-pause-btn');
 const resetButton = document.getElementById('reset-btn');
+const workSessionButton = document.getElementById('work-session');
+const shortBreakButton = document.getElementById('short-break');
+const longBreakButton = document.getElementById('long-break');
+const clockFace = document.getElementById('clock-face');
 
 //Needed variables
 let minutes;
 let secondsLeft;
 let countdown;
-const clockFace = document.getElementById('clock-face');
+
+
+function togglePlayOrPauseButton() {
+    playOrPauseButton.innerHTML === 'Play' ? playOrPauseButton.innerHTML = 'Pause' : playOrPauseButton.innerHTML = 'Play';
+}
+
+function displayTimer(seconds) {
+    minutes = Math.floor(seconds / 60);
+    const remainderSeconds = seconds % 60;
+    const display = `${minutes < 10 ? '0' : ''}${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+    clockFace.innerHTML = display;
+    document.title = display + ' Pomodoro Timer';    
+}
 
 function startTimer(minutes) {
     secondsLeft = minutes * 60;
@@ -33,27 +49,6 @@ function startTimer(minutes) {
     }, 1000);        
 } 
    
-function resetTimer() {
-    resetSound.play();
-    clearInterval(countdown);
-    minutes = undefined;
-    clockFace.innerHTML = `${25}:00`;
-    document.title = 'Pomodoro Timer';
-    playOrPauseButton.innerHTML = 'Play'; 
-}
-
-function displayTimer(seconds) {
-    minutes = Math.floor(seconds / 60);
-    const remainderSeconds = seconds % 60;
-    const display = `${minutes < 10 ? '0' : ''}${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
-    clockFace.innerHTML = display;
-    document.title = display + ' Pomodoro Timer';    
-}
-
-function togglePlayOrPauseButton() {
-    playOrPauseButton.innerHTML === 'Play' ? playOrPauseButton.innerHTML = 'Pause' : playOrPauseButton.innerHTML = 'Play';
-}
-
 function PlayOrPause() {
     if (playOrPauseButton.innerHTML === 'Play') {        
         minutes === undefined ? startTimer(1) : startTimer(secondsLeft/60);
@@ -65,23 +60,27 @@ function PlayOrPause() {
     }
 }
 
-//DOM manipulation
+function resetTimer() {
+    resetSound.play();
+    clearInterval(countdown);
+    minutes = undefined;
+    clockFace.innerHTML = `${25}:00`;
+    document.title = 'Pomodoro Timer';
+    playOrPauseButton.innerHTML = 'Play'; 
+}
+
+//DOM onclick functionalities
 
 playOrPauseButton.onclick = PlayOrPause;
 resetButton.onclick = resetTimer;
 
-//Work session and Break buttons functionality - NEEDS REFACTORING
-
-const workSessionButton = document.getElementById('work-session');
-const shortBreakButton = document.getElementById('short-break');
-const longBreakButton = document.getElementById('long-break');
-
+//Creates array of the timer buttons 
 const workAndBreakButtons = [workSessionButton, shortBreakButton, longBreakButton];
 
 workAndBreakButtons.forEach(button => {
     button.onclick = function() {
       clearInterval(countdown); 
-      togglePlayOrPauseButton;
+      playOrPauseButton.innerHTML = 'Play';
       
       switch(button.value) {
         case "work-session":
