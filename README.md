@@ -2,7 +2,7 @@
 Pomodoro-timer built with vanilla Javascript and responsive CSS
 
 Live on: https://juliana-gru.github.io/pomodoro-timer/
-*Other features and fixes to be added.
+*Other features to be added.
 
 ## User stories:
 - User can see a timer for 25 minutes - the working session
