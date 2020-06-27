@@ -51,7 +51,7 @@ function startTimer(minutes) {
    
 function PlayOrPause() {
     if (playOrPauseButton.innerHTML === 'Play') {        
-        minutes === undefined ? startTimer(1) : startTimer(secondsLeft/60);
+        minutes === undefined ? startTimer(25) : startTimer(secondsLeft/60);
         togglePlayOrPauseButton();
     } else {
         clickSound.play();
