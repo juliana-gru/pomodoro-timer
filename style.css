@@ -73,34 +73,36 @@ div.clock-container {
     margin: 40px 0;
 }
 
-h1 {    
+h1 {
+    display: flex;
+    justify-content: center;    
     font-size: 4em;
-    padding: 0 0.6em;
+    padding: 0 0.5em;
     background-color: #fc9d9d2f;
     border-radius: 4px;
     margin: 20px 0;
+    width: 2.6em;
 }
 
-/* h1::before {    
-    background: linear-gradient(45deg, #fc9d9d2f, transparent);
-    content: "";
-    position: absolute;
-    width: 420px;
-    height: 185px;
-    z-index: -1;
-    margin-left: -65px;
-}; */
+button {
+    font-family: 'Sriracha', sans-serif;           
+    font-size: 20px;    
+    color: white;    
+    transition: scale background-color 1s;    
+    border-style: none; 
+}
+
+button.timer-options:hover, .control-buttons-container button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
 
 button.timer-options {
-    font-family: 'Sriracha', sans-serif;    
-    font-size: 20px;
     border-style: none;
     background-color:#333366d5;
-    color: white;
     padding: 8px 8px;
     margin: 0px -1px;
-    border-radius: 6px;
-    
+    border-radius: 6px;    
 }
 
 button.timer-options:active {
@@ -109,31 +111,27 @@ button.timer-options:active {
     outline: none;
 }
 
-div.clock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .control-buttons-container button {
-    font-family: 'Sriracha', cursive;    
-    font-size: 20px;
     border-radius: 10px;
     background-color: #eb4d55c0;
-    color: white;
     margin: 0 5px;
-    border-style: none;
     padding: 6px 12px;
     width: 5em;
     
 }
 
-button:active {
-    background-color: rgb(214, 134, 134);
+.control-buttons-container button:active {
+    background-color: rgb(209, 106, 106);
 }
 
 button:focus {
     outline: none;
+}
+
+div.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div.control-buttons {

@@ -1,8 +1,5 @@
-
 //Audio files
-const clickSound = new Audio("./resources/zapsplat_household_alarm_clock_large_snooze_button_press_002_12969.mp3");
-const timerAlarm = new Audio("./resources/zapsplat_household_alarm_clock_old_fashioned_ring_very_short_44062.mp3");
-const resetSound = new Audio("./resources/zapsplat_household_alarm_clock_button_press_12967.mp3");
+const alarmSound = new Audio("./resources/zapsplat_household_alarm_clock_old_fashioned_ring_very_short_44062.mp3");
 
 //DOM buttons and clockDisplay
 const playOrPauseButton = document.getElementById('play-pause-btn');
@@ -32,7 +29,6 @@ function displayTimer(seconds) {
 
 function startTimer(minutes) {
     secondsLeft = minutes * 60;
-    clickSound.play();
 
     //Initiate minutes countdown
     countdown = setInterval(() => {        
@@ -41,7 +37,7 @@ function startTimer(minutes) {
 
         //check if countdown is complete
         if(secondsLeft <= 0) {
-            timerAlarm.play();
+            alarmSound.play();
             clearInterval(countdown);
             minutes === 25 ? displayTimer(300) : displayTimer(1500);
             togglePlayOrPauseButton();
@@ -54,14 +50,12 @@ function PlayOrPause() {
         minutes === undefined ? startTimer(25) : startTimer(secondsLeft/60);
         togglePlayOrPauseButton();
     } else {
-        clickSound.play();
         clearInterval(countdown);
         togglePlayOrPauseButton();
     }
 }
 
 function resetTimer() {
-    resetSound.play();
     clearInterval(countdown);
     minutes = undefined;
     clockFace.innerHTML = `${25}:00`;
