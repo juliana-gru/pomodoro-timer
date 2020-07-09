@@ -38,14 +38,14 @@ function startTimer(minutes) {
 	secondsLeft = minutes * 60;
 
 	//Initiate minutes countdown
-	setInterval(() => {
+	countdown = setInterval(() => {
 		secondsLeft--;
 		displayTimer(secondsLeft);
 
 		//check if countdown is complete
 		if (secondsLeft <= 0) {
 			alarmSound.play();
-			clearInterval();
+			clearInterval(countdown);
 			minutes === 25 ? (secondsLeft = 300) : (secondsLeft = 1500);
 			displayTimer(secondsLeft);
 			togglePlayOrPauseButton();
