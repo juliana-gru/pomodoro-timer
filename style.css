@@ -13,18 +13,10 @@ html {
 }
 
 body {
-    background-color: #f6e1e1;
+    background-color: #f6e1e1;    
+    background: linear-gradient(135deg, rgba(255,247,247,1) 50%, rgba(246,225,225,1) 100%);
     font-family: 'Sriracha', cursive, 'Roboto';
     min-height: 100%;   
-}
-
-body::before {
-    background: linear-gradient(to bottom, rgba(255,255,255,1) -30%,rgba(255,255,255,0) 100%);
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 }
 
 .image-logo {
@@ -38,7 +30,7 @@ a {
     text-decoration: none;  
 }
 
-nav {
+header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +38,7 @@ nav {
     margin-bottom: 40px;
 }
 
-nav span {
+header span {
     margin: 0 14px;
     color: black;
     font-size: 22px;
@@ -99,21 +91,21 @@ button.timer-options:hover, .control-buttons-container button:hover {
 
 button.timer-options {
     border-style: none;
-    background-color:#333366d5;
+    background-color:#4b4b94;
     padding: 8px 8px;
     margin: 0px -1px;
     border-radius: 6px;    
 }
 
 button.timer-options:active {
-    background-color: #333366ed;
+    background-color: #424288;
     font-weight: 600;
     outline: none;
 }
 
 .control-buttons-container button {
     border-radius: 10px;
-    background-color: #eb4d55c0;
+    background-color: #b3282f;
     margin: 0 5px;
     padding: 6px 12px;
     width: 5em;
@@ -121,7 +113,7 @@ button.timer-options:active {
 }
 
 .control-buttons-container button:active {
-    background-color: rgb(209, 106, 106);
+    background-color: #942228;
 }
 
 button:focus {
@@ -167,11 +159,11 @@ footer {
         width: 40px;
     }
 
-    nav span {
+    header span {
         font-size: 35px;
     }
 
-    nav {
+    header {
         margin-bottom: 40px;
     }
     
@@ -205,11 +197,11 @@ footer {
         width: 60px;
     }
 
-    nav {
+    header {
         margin-bottom: 60px;
     }
 
-    nav span {
+    header span {
         font-size: 40px;
     }
 
