@@ -3,11 +3,6 @@
     padding: 0;
 }
 
-.wrapper {
-    width: 100%;
-    display: block;
-}
-
 html {
     height: 100%;
 }
@@ -35,7 +30,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 3%;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 header span {
@@ -45,17 +40,14 @@ header span {
     font-weight: 800;
 }
 
+.wrapper {
+    margin: 0 auto;
+}
 
 .timer-options-container, .control-buttons-container {
     display: flex;
     width: 100%;
     justify-content: center; 
-}
-
-.timer-options-container {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
 }
 
 div.clock-container {
@@ -78,13 +70,13 @@ h1 {
 
 button {
     font-family: 'Sriracha', sans-serif;           
-    font-size: 20px;    
-    color: white;    
-    transition: scale background-color 1s;    
+    font-size: 16px;    
+    color: white; 
     border-style: none; 
 }
 
-button.timer-options:hover, .control-buttons-container button:hover {
+button.timer-options:hover, .control-buttons-container button:hover {        
+    transition: scale, background-color 1s;   
     transform: scale(1.05);
     cursor: pointer;
 }
@@ -99,7 +91,6 @@ button.timer-options {
 
 button.timer-options:active {
     background-color: #424288;
-    font-weight: 600;
     outline: none;
 }
 
@@ -148,12 +139,7 @@ footer {
     display: flex;
 }
 
-@media only screen and (min-width: 768px) {
-    .wrapper {
-        width: 600px;
-        margin: 0 auto;
-    }
-
+@media only screen and (min-width: 768px) {    
     .image-logo {
         height: 40px;
         width: 40px;
@@ -161,10 +147,7 @@ footer {
 
     header span {
         font-size: 35px;
-    }
-
-    header {
-        margin-bottom: 40px;
+        margin: 0 20px;
     }
     
     button.timer-options {
@@ -186,23 +169,15 @@ footer {
     }
 }
 
-@media only screen and (min-width: 1250px) {
-    .wrapper {
-        width: 800px;
-        margin: 0 auto;
-    }
-
+@media only screen and (min-width: 1250px) {    
     .image-logo {
         height: 60px;
         width: 60px;
     }
 
-    header {
-        margin-bottom: 60px;
-    }
-
     header span {
         font-size: 40px;
+        margin: 0 25px;
     }
 
     h1 {

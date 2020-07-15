@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Sriracha&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Sriracha&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+
+		<title>Pomodoro Timer</title>
+	</head>
+
+	<body>
+		<header class="header">
+			<a href="#">
+				<img
+					src="resources/iconfinder_fruits-and-veggies-icons_tomato_3244981.png"
+					class="image-logo"
+					alt="pomodoro image"
+				/>
+			</a>
+			<span>Pomodoro Timer</span>
+    </header>
     
-    <title>Pomodoro Timer</title>
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <a href="#">
-          <img
-            src="resources/iconfinder_fruits-and-veggies-icons_tomato_3244981.png"
-            class="image-logo"
-            alt="pomodoro image"
-          />
-        </a>
-        <span>Pomodoro Timer</span>
-      </header>
-
-      <main class="main">
-        <div class="timer-options-container">
-          <button class="timer-options" id="work-session">
-            Work Session
-          </button>
-          <button class="timer-options" id="short-break">
-            Short Break
-          </button>
-          <button class="timer-options" id="long-break">
-            Long Break
-          </button>
-        </div>
-        <div class="clock-container">
-          <h1 id="clock-face">25:00</h1>
-        </div>
-        <div class="control-buttons-container">
-          <button id="play-pause-btn">Play</button>
-          <button id="reset-btn">Reset</button>
-        </div>
-      </main>
-    </div>
-    <footer>
-      <span class="credits"
-        >Sound by <a href="https://www.zapsplat.com">Zapsplat.</a>
-      </span>
-      <span>
-        Produced by JG
-        <a href="https://github.com/juliana-gru">
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-      </span>
-    </footer>
-    <script src="main.js"></script>
-  </body>
+		<div class="wrapper">
+			<main class="main">
+				<div class="timer-options-container">
+					<button class="timer-options" id="work-session">
+						Work Session
+					</button>
+					<button class="timer-options" id="short-break">
+						Short Break
+					</button>
+					<button class="timer-options" id="long-break">
+						Long Break
+					</button>
+				</div>
+				<div class="clock-container">
+					<h1 id="clock-face">25:00</h1>
+				</div>
+				<div class="control-buttons-container">
+					<button id="play-pause-btn">Play</button>
+					<button id="reset-btn">Reset</button>
+				</div>
+			</main>
+		</div>
+		<footer>
+			<span class="credits"
+				>Sound by <a href="https://www.zapsplat.com">Zapsplat.</a>
+			</span>
+			<span>
+				Produced by JG
+				<a href="https://github.com/juliana-gru">
+					<i class="fa fa-github" aria-hidden="true"></i>
+				</a>
+			</span>
+		</footer>
+		<script src="main.js"></script>
+	</body>
 </html>
