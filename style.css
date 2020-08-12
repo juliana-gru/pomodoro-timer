@@ -10,7 +10,7 @@ html {
 body {
     background-color: #f6e1e1;    
     background: linear-gradient(135deg, rgba(255,247,247,1) 50%, rgba(246,225,225,1) 100%);
-    font-family: 'Sriracha', cursive, 'Roboto';
+    font-family: 'Sriracha', cursive, 'Poppins', sans-serif;
     min-height: 100%;   
 }
 
@@ -58,14 +58,14 @@ div.clock-container {
 }
 
 h1 {
-    display: flex;
-    justify-content: center;    
+    font-family: 'Nunito';
+    font-weight: 800;        
     font-size: 4em;
-    padding: 0 0.5em;
+    padding: 0.2em 0.5em;
     background-color: #fc9d9d2f;
     border-radius: 4px;
     margin: 20px 0;
-    width: 2.6em;
+    width: 170px;
 }
 
 button {
@@ -82,11 +82,14 @@ button.timer-options:hover, .control-buttons-container button:hover {
 }
 
 button.timer-options {
+    font-size: 14px;
     border-style: none;
     background-color:#4b4b94;
-    padding: 8px 8px;
+    padding: 8px 0;
     margin: 0px -1px;
-    border-radius: 6px;    
+    border-radius: 6px;
+    width: inherit;
+    max-width: 120px;    
 }
 
 button.timer-options:active {
@@ -96,7 +99,7 @@ button.timer-options:active {
 
 .control-buttons-container button {
     border-radius: 10px;
-    background-color: #b3282f;
+    background-color: #4b4b94;
     margin: 0 5px;
     padding: 6px 12px;
     width: 5em;
@@ -139,7 +142,7 @@ footer {
     display: flex;
 }
 
-@media only screen and (min-width: 768px) {    
+@media only screen and (min-width: 750px) {    
     .image-logo {
         height: 40px;
         width: 40px;
@@ -151,12 +154,15 @@ footer {
     }
     
     button.timer-options {
-        padding: 10px 18px;
-        font-size: 20px;
+        padding: 10px 0px;
+        font-size: 18px;
+        width: 150px;
+        max-width: none;
     }
 
     h1 {
         font-size: 5em;
+        width: 220px;
     }
     
     .control-buttons-container button {
@@ -187,11 +193,13 @@ footer {
 
     h1 {
         font-size: 6em;
+        width: 255px;
     }
 
     button.timer-options {
-        padding: 10px 25px;
-        font-size: 25px;
+        padding: 10px 0;
+        font-size: 22px;
+        width: 200px;
     }
 
     .control-buttons-container button {
