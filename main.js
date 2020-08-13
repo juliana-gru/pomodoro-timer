@@ -18,12 +18,7 @@ const clockFace = document.getElementById('clock-face');
 let minutes;
 let secondsLeft;
 let countdown;
-
-// function toggleplayButton() {
-// 	playButton.innerHTML === 'Play'
-// 		? (playButton.innerHTML = 'Pause')
-// 		: (playButton.innerHTML = 'Play');
-// }
+let timerIsRunning = false;
 
 function displayTimer(seconds) {
 	minutes = Math.floor(seconds / 60);
@@ -53,51 +48,37 @@ function startTimer(minutes) {
 	}, 1000);
 }
 
-function PlayOrPause() {
-	if (playButton.innerHTML === 'Play') {
-		minutes === undefined ? startTimer(25) : startTimer(secondsLeft / 60);
-		toggleplayButton();
+function PlayOrStop(e) {
+	if (!timerIsRunning) {
+		if (e.target.innerHTML === 'Play') {
+				minutes === undefined ? startTimer(25) : startTimer(secondsLeft / 60);
+				timerIsRunning = true;
+		}
 	} else {
-		clearInterval(countdown);
-		toggleplayButton();
+		if (e.target.innerHTML === 'Stop') {
+			clearInterval(countdown);
+			timerIsRunning = false;
+		}
 	}
 }
 
 function resetTimer() {
-	clearInterval(countdown);
+	clearInterval(countdown);	
+	timerIsRunning = false;
 	minutes = undefined;
 	clockFace.innerHTML = `${25}:00`;
 	document.title = 'Pomodoro Timer';
-	playButton.innerHTML = 'Play';
-}
-
-function toggleworkAndBreakButtons() {
-	clearInterval(countdown);
-	playButton.innerHTML = 'Play';
-
-	switch (button.id) {
-		case 'work-session':
-			secondsLeft = 1500; // 25 minutes
-			break;
-		case 'short-break':
-			secondsLeft = 300; // 5 minutes
-			break;
-		default:
-			secondsLeft = 600; // 10 minutes
-	}
-	displayTimer(secondsLeft);
 }
 
 //DOM onclick functionalities
 
-playButton.addEventListener('click', PlayOrPause);
-stopButton.addEventListener('click', resetTimer);
+playButton.addEventListener('click', PlayOrStop);
+stopButton.addEventListener('click', PlayOrStop);
+resetButton.addEventListener('click', resetTimer);
 workAndBreakButtons.forEach((button) => {
 	button.addEventListener('click', function () {
 		{
 			clearInterval(countdown);
-			playButton.innerHTML = 'Play';
-
 			switch (button.id) {
 				case 'work-session':
 					secondsLeft = 1500; // 25 minutes
@@ -109,6 +90,7 @@ workAndBreakButtons.forEach((button) => {
 					secondsLeft = 600; // 10 minutes
 			}
 			displayTimer(secondsLeft);
+			timerIsRunning = false;
 		}
 	});
 });
