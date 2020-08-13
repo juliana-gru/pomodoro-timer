@@ -4,9 +4,10 @@ const alarmSound = new Audio(
 );
 
 //DOM buttons and clockDisplay
-const playOrPauseButton = document.getElementById('play-pause-btn');
+const playButton = document.getElementById('play-btn');
+const stopButton = document.getElementById('stop-btn');
 const resetButton = document.getElementById('reset-btn');
-const timerButtons = Array.from(
+const workAndBreakButtons = Array.from(
 	document.getElementsByClassName('timer-options')
 );
 const shortBreakButton = document.getElementById('short-break');
@@ -18,11 +19,11 @@ let minutes;
 let secondsLeft;
 let countdown;
 
-function togglePlayOrPauseButton() {
-	playOrPauseButton.innerHTML === 'Play'
-		? (playOrPauseButton.innerHTML = 'Pause')
-		: (playOrPauseButton.innerHTML = 'Play');
-}
+// function toggleplayButton() {
+// 	playButton.innerHTML === 'Play'
+// 		? (playButton.innerHTML = 'Pause')
+// 		: (playButton.innerHTML = 'Play');
+// }
 
 function displayTimer(seconds) {
 	minutes = Math.floor(seconds / 60);
@@ -47,19 +48,18 @@ function startTimer(minutes) {
 			alarmSound.play();
 			clearInterval(countdown);
 			minutes === 25 ? (secondsLeft = 300) : (secondsLeft = 1500);
-			displayTimer(secondsLeft);
-			togglePlayOrPauseButton();
+			displayTimer(secondsLeft);			
 		}
 	}, 1000);
 }
 
 function PlayOrPause() {
-	if (playOrPauseButton.innerHTML === 'Play') {
+	if (playButton.innerHTML === 'Play') {
 		minutes === undefined ? startTimer(25) : startTimer(secondsLeft / 60);
-		togglePlayOrPauseButton();
+		toggleplayButton();
 	} else {
 		clearInterval(countdown);
-		togglePlayOrPauseButton();
+		toggleplayButton();
 	}
 }
 
@@ -68,12 +68,12 @@ function resetTimer() {
 	minutes = undefined;
 	clockFace.innerHTML = `${25}:00`;
 	document.title = 'Pomodoro Timer';
-	playOrPauseButton.innerHTML = 'Play';
+	playButton.innerHTML = 'Play';
 }
 
-function toggleTimerButtons() {
+function toggleworkAndBreakButtons() {
 	clearInterval(countdown);
-	playOrPauseButton.innerHTML = 'Play';
+	playButton.innerHTML = 'Play';
 
 	switch (button.id) {
 		case 'work-session':
@@ -90,13 +90,13 @@ function toggleTimerButtons() {
 
 //DOM onclick functionalities
 
-playOrPauseButton.addEventListener('click', PlayOrPause);
-resetButton.addEventListener('click', resetTimer);
-timerButtons.forEach((button) => {
+playButton.addEventListener('click', PlayOrPause);
+stopButton.addEventListener('click', resetTimer);
+workAndBreakButtons.forEach((button) => {
 	button.addEventListener('click', function () {
 		{
 			clearInterval(countdown);
-			playOrPauseButton.innerHTML = 'Play';
+			playButton.innerHTML = 'Play';
 
 			switch (button.id) {
 				case 'work-session':

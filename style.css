@@ -3,20 +3,16 @@
     padding: 0;
 }
 
-html {
-    height: 100%;
-}
+html, body {min-height: 100%;}
 
-body {
-    background-color: #f6e1e1;    
+body {   
     background: linear-gradient(135deg, rgba(255,247,247,1) 50%, rgba(246,225,225,1) 100%);
     font-family: 'Sriracha', cursive, 'Poppins', sans-serif;
-    min-height: 100%;   
 }
 
 .image-logo {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
 }
 
 a {
@@ -25,36 +21,38 @@ a {
     text-decoration: none;  
 }
 
+
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3%;
-    margin-bottom: 20px;
+    margin: 20px 0 40px 0;
 }
 
-header span {
-    margin: 0 14px;
+.header a {font-size: 0;}
+
+.header span {
+    margin-left: 10px;
     color: black;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 800;
 }
 
 .wrapper {
     margin: 0 auto;
+    height: calc(100vh-)
 }
 
 .timer-options-container, .control-buttons-container {
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     justify-content: center; 
 }
 
-div.clock-container {
+.clock-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 0;
 }
 
 h1 {
@@ -64,8 +62,8 @@ h1 {
     padding: 0.2em 0.5em;
     background-color: #fc9d9d2f;
     border-radius: 4px;
-    margin: 20px 0;
-    width: 170px;
+    width: 170px;    
+    margin: 50px 0;
 }
 
 button {
@@ -75,44 +73,41 @@ button {
     border-style: none; 
 }
 
-button.timer-options:hover, .control-buttons-container button:hover {        
+.timer-options:hover, .control-buttons-container button:hover {        
     transition: scale, background-color 1s;   
     transform: scale(1.05);
     cursor: pointer;
 }
 
-button.timer-options {
-    font-size: 14px;
+.timer-options {
+    font-size: 12px;
     border-style: none;
-    background-color:#4b4b94;
-    padding: 8px 0;
+    background-color:#575794;
+    padding: 4px 0;
     margin: 0px -1px;
     border-radius: 6px;
-    width: inherit;
-    max-width: 120px;    
+    width: 100px;    
 }
 
-button.timer-options:active {
+.timer-options:active {
     background-color: #424288;
     outline: none;
 }
 
 .control-buttons-container button {
     border-radius: 10px;
-    background-color: #4b4b94;
     margin: 0 5px;
     padding: 6px 12px;
-    width: 5em;
-    
+    width: 75px;    
 }
 
-.control-buttons-container button:active {
-    background-color: #942228;
-}
+#play-btn {background-color: rgb(77, 145, 5);}
 
-button:focus {
-    outline: none;
-}
+#stop-btn {background-color: #b12129;}
+
+#reset-btn {background-color: rgb(90, 87, 87);}
+
+button:focus {outline: none;}
 
 div.clock {
     display: flex;
@@ -148,25 +143,28 @@ footer {
         width: 40px;
     }
 
-    header span {
-        font-size: 35px;
-        margin: 0 20px;
+    header {margin: 30px 0 80px 0;}
+    .header span {
+        font-size: 28px;
+        margin-left: 20px;
     }
     
-    button.timer-options {
-        padding: 10px 0px;
+    .timer-options {
+        padding: 6px 0px;
         font-size: 18px;
-        width: 150px;
-        max-width: none;
+        width: 160px;
     }
 
     h1 {
-        font-size: 5em;
-        width: 220px;
+        font-size: 6em;
+        width: 255px;
+        margin: 80px;
     }
     
     .control-buttons-container button {
         font-size: 20px;
+        margin: 0 10px;
+        width: 100px;
     }
 
     footer span {
@@ -177,33 +175,18 @@ footer {
 
 @media only screen and (min-width: 1250px) {    
     .image-logo {
-        height: 60px;
-        width: 60px;
+        height: 50px;
+        width: 50px;
     }
+        
+    .header span {font-size: 32px;}    
 
-    header {
-        padding: 3%;
-        margin-bottom: 50px;
-    }
-    
-    header span {
-        font-size: 40px;
-        margin: 0 30px;
-    }
-
-    h1 {
-        font-size: 6em;
-        width: 255px;
-    }
-
-    button.timer-options {
-        padding: 10px 0;
-        font-size: 22px;
-        width: 200px;
-    }
+    .timer-options {width: 180px;}
 
     .control-buttons-container button {
         font-size: 25px;
+        margin: 0 10px;
+        width: 125px;
     }
 
     footer span {
