@@ -4,7 +4,7 @@ const alarmSound = new Audio(
 );
 
 //DOM buttons and clockDisplay
-const playButton = document.getElementById('play-btn');
+const startButton = document.getElementById('start-btn');
 const stopButton = document.getElementById('stop-btn');
 const resetButton = document.getElementById('reset-btn');
 const workAndBreakButtons = Array.from(
@@ -72,7 +72,7 @@ function resetTimer() {
 
 //DOM onclick functionalities
 
-playButton.addEventListener('click', PlayOrStop);
+startButton.addEventListener('click', PlayOrStop);
 stopButton.addEventListener('click', PlayOrStop);
 resetButton.addEventListener('click', resetTimer);
 workAndBreakButtons.forEach((button) => {
