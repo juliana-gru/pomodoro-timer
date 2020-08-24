@@ -6,7 +6,7 @@ const alarmSound = new Audio(
 //DOM buttons and clockDisplay
 const startButton = document.getElementById('start-btn');
 const stopButton = document.getElementById('stop-btn');
-const resetButton = document.getElementById('reset-btn');
+// const resetButton = document.getElementById('reset-btn');
 const workAndBreakButtons = Array.from(
 	document.getElementsByClassName('timer-options')
 );
@@ -49,32 +49,30 @@ function startTimer(minutes) {
 }
 
 function PlayOrStop(e) {
-	if (!timerIsRunning) {
-		if (e.target.innerHTML === 'Play') {
-				minutes === undefined ? startTimer(25) : startTimer(secondsLeft / 60);
-				timerIsRunning = true;
-		}
-	} else {
-		if (e.target.innerHTML === 'Stop') {
-			clearInterval(countdown);
-			timerIsRunning = false;
-		}
+	if (!timerIsRunning && e.target.innerHTML === 'Start') {
+		console.log(minutes)
+		minutes === undefined ? startTimer(25) : startTimer(secondsLeft / 60);
+		timerIsRunning = true;
+	}	else if (timerIsRunning && e.target.innerHTML === 'Stop') {		
+		clearInterval(countdown);
+		timerIsRunning = false;		
+		console.log('Stopping');
 	}
 }
 
-function resetTimer() {
-	clearInterval(countdown);	
-	timerIsRunning = false;
-	minutes = undefined;
-	clockFace.innerHTML = `${25}:00`;
-	document.title = 'Pomodoro Timer';
-}
+// function resetTimer() {
+// 	clearInterval(countdown);	
+// 	timerIsRunning = false;
+// 	minutes = undefined;
+// 	clockFace.innerHTML = `${25}:00`;
+// 	document.title = 'Pomodoro Timer';
+// }
 
 //DOM onclick functionalities
 
 startButton.addEventListener('click', PlayOrStop);
 stopButton.addEventListener('click', PlayOrStop);
-resetButton.addEventListener('click', resetTimer);
+// resetButton.addEventListener('click', resetTimer);
 workAndBreakButtons.forEach((button) => {
 	button.addEventListener('click', function () {
 		{

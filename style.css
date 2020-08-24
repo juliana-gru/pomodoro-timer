@@ -101,11 +101,11 @@ button {
     width: 75px;    
 }
 
-#play-btn {background-color: rgb(77, 145, 5);}
+#start-btn {background-color: rgb(77, 145, 5);}
 
 #stop-btn {background-color: #b12129;}
 
-#reset-btn {background-color: rgb(90, 87, 87);}
+/* #reset-btn {background-color: rgb(90, 87, 87);} */
 
 button:focus {outline: none;}
 
