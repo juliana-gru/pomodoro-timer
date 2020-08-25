@@ -55,7 +55,6 @@ function PlayOrStop(e) {
 }
 
 //DOM onclick functionalities
-
 startButton.addEventListener('click', PlayOrStop);
 stopButton.addEventListener('click', PlayOrStop);
 workAndBreakButtons.forEach((button) => {
@@ -72,8 +71,7 @@ workAndBreakButtons.forEach((button) => {
 					secondsLeft = 600; // 10 minutes
 			}
 			displayTimer(secondsLeft);
-			timerIsRunning = false;
-		
+			timerIsRunning = false;		
 	});
 });
 
