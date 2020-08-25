@@ -42,6 +42,7 @@ function startTimer(minutes) {
 		if (secondsLeft <= 0) {
 			alarmSound.play();
 			clearInterval(countdown);
+			timerIsRunning = false;
 			minutes === 25 ? (secondsLeft = 300) : (secondsLeft = 1500);
 			displayTimer(secondsLeft);			
 		}
@@ -50,13 +51,11 @@ function startTimer(minutes) {
 
 function PlayOrStop(e) {
 	if (!timerIsRunning && e.target.innerHTML === 'Start') {
-		console.log(minutes)
 		minutes === undefined ? startTimer(25) : startTimer(secondsLeft / 60);
 		timerIsRunning = true;
 	}	else if (timerIsRunning && e.target.innerHTML === 'Stop') {		
 		clearInterval(countdown);
-		timerIsRunning = false;		
-		console.log('Stopping');
+		timerIsRunning = false;	
 	}
 }
 
