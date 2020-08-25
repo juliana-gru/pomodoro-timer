@@ -95,10 +95,10 @@ button {
 }
 
 .control-buttons-container button {
-    border-radius: 10px;
+    border-radius: 6px;
     margin: 0 5px;
     padding: 6px 12px;
-    width: 75px;    
+    width: 85px;    
 }
 
 #start-btn {background-color: rgb(77, 145, 5);}

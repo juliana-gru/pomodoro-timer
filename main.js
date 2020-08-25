@@ -1,16 +1,12 @@
 //Audio files
 const alarmSound = new Audio(
-	'./resources/zapsplat_household_alarm_clock_old_fashioned_ring_very_short_44062.mp3'
-);
+	'./resources/zapsplat_household_alarm_clock_old_fashioned_ring_very_short_44062.mp3');
 
 //DOM buttons and clockDisplay
 const startButton = document.getElementById('start-btn');
 const stopButton = document.getElementById('stop-btn');
 const workAndBreakButtons = Array.from(
-	document.getElementsByClassName('timer-options')
-);
-const shortBreakButton = document.getElementById('short-break');
-const longBreakButton = document.getElementById('long-break');
+	document.getElementsByClassName('timer-options'));
 const clockFace = document.getElementById('clock-face');
 
 //Needed variables
@@ -64,7 +60,6 @@ startButton.addEventListener('click', PlayOrStop);
 stopButton.addEventListener('click', PlayOrStop);
 workAndBreakButtons.forEach((button) => {
 	button.addEventListener('click', function () {
-		{
 			clearInterval(countdown);
 			switch (button.id) {
 				case 'work-session':
@@ -78,7 +73,7 @@ workAndBreakButtons.forEach((button) => {
 			}
 			displayTimer(secondsLeft);
 			timerIsRunning = false;
-		}
+		
 	});
 });
 
