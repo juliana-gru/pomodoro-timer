@@ -105,8 +105,6 @@ button {
 
 #stop-btn {background-color: #b12129;}
 
-/* #reset-btn {background-color: rgb(90, 87, 87);} */
-
 button:focus {outline: none;}
 
 div.clock {
