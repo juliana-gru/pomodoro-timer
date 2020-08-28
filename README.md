@@ -1,5 +1,5 @@
 # pomodoro-timer
-A responsive Pomodoro-timer web app built with vanilla Javascript and CSS.
+A responsive Pomodoro-timer web app built with vanilla Javascript.
 
 Live on: https://juliana-gru.github.io/pomodoro-timer/
 
