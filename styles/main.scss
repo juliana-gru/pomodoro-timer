@@ -1,0 +1,135 @@
+@import './variables';
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  // box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: $backgroundGradient;
+  font-family: 'Sriracha', cursive, 'Poppins', sans-serif;
+}
+
+a {
+  color: white;
+  margin: 0px 1px;
+  text-decoration: none;
+}
+
+header {
+  @include flexCenter();
+
+  margin: 20px 0 40px 0;
+
+  a {
+    font-size: 0;
+
+    .image-logo {
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  span {
+    margin-left: 10px;
+    color: black;
+    font-size: 16px;
+    font-weight: 800;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+main {
+
+  .timer-options-container,
+  .control-buttons-container,
+  .clock-container {
+    @include flexCenter();
+  }
+
+  h1#clock-face {
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 4em;
+    padding: 0.2em 0.5em;
+    background-color: $clockFaceColor;
+    border-radius: 4px;
+    width: 170px;
+    margin: 50px 0;
+  }
+}
+
+button {
+  font-family: 'Sriracha', sans-serif;
+  font-size: 16px;
+  color: white;
+  border-style: none;
+  border-radius: 6px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.timer-options {
+  font-size: 12px;
+  background-color: #575794;
+  padding: 4px 0;
+  margin: 0px -1px;
+  width: 100px;
+}
+
+.control-buttons-container {
+  button {
+    margin: 0 5px;
+    padding: 6px 12px;
+    width: 85px;
+  }
+
+  #start-btn {
+    background-color: $startBtn;
+  }
+
+  #stop-btn {
+    background-color: $stopBtn;
+  }
+}
+
+.timer-options:hover,
+.control-buttons-container button:hover {
+  transition: scale, background-color 1s;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+footer {
+  @include flexCenter();
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: $footerColor;
+  color: white;
+  padding: 8px 0;
+
+  span {
+    margin-left: 2px;
+    font-size: 8px;
+  }
+}
+
+@import './mediaQueries';

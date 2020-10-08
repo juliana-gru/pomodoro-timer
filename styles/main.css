@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, #fff7f7 50%, #f6e1e1 100%);
+  font-family: 'Sriracha', cursive, 'Poppins', sans-serif;
+}
+
+a {
+  color: white;
+  margin: 0px 1px;
+  text-decoration: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0 40px 0;
+}
+
+header a {
+  font-size: 0;
+}
+
+header a .image-logo {
+  height: 25px;
+  width: 25px;
+}
+
+header span {
+  margin-left: 10px;
+  color: black;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+main .timer-options-container,
+main .control-buttons-container,
+main .clock-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main h1#clock-face {
+  font-family: 'Nunito';
+  font-weight: 800;
+  font-size: 4em;
+  padding: 0.2em 0.5em;
+  background-color: #fc9d9d2f;
+  border-radius: 4px;
+  width: 170px;
+  margin: 50px 0;
+}
+
+button {
+  font-family: 'Sriracha', sans-serif;
+  font-size: 16px;
+  color: white;
+  border-style: none;
+  border-radius: 6px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.timer-options {
+  font-size: 12px;
+  background-color: #575794;
+  padding: 4px 0;
+  margin: 0px -1px;
+  width: 100px;
+}
+
+.control-buttons-container button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  width: 85px;
+}
+
+.control-buttons-container #start-btn {
+  background-color: #4d9105;
+}
+
+.control-buttons-container #stop-btn {
+  background-color: #b12129;
+}
+
+.timer-options:hover,
+.control-buttons-container button:hover {
+  -webkit-transition: scale, background-color 1s;
+  transition: scale, background-color 1s;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  cursor: pointer;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #333366;
+  color: white;
+  padding: 8px 0;
+}
+
+footer span {
+  margin-left: 2px;
+  font-size: 8px;
+}
+
+@media only screen and (min-width: 750px) {
+  header {
+    margin: 30px 0 80px 0;
+  }
+  header a .image-logo {
+    height: 40px;
+    width: 40px;
+  }
+  header span {
+    font-size: 28px;
+    margin-left: 20px;
+  }
+  main .timer-options {
+    padding: 6px 0px;
+    font-size: 18px;
+    width: 160px;
+  }
+  main h1#clock-face {
+    font-size: 6em;
+    width: 255px;
+    margin: 80px;
+  }
+  main .control-buttons-container button {
+    font-size: 20px;
+    margin: 0 10px;
+    width: 100px;
+  }
+  footer span {
+    font-size: 12px;
+    margin-left: 3px;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  header a .image-logo {
+    height: 50px;
+    width: 50px;
+  }
+  header span {
+    font-size: 32px;
+  }
+  main .timer-options {
+    width: 180px;
+  }
+  main .control-buttons-container button {
+    font-size: 25px;
+    margin: 0 10px;
+    width: 125px;
+  }
+  footer span {
+    margin-left: 4px;
+    font-size: 13px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

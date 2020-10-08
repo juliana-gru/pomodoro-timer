@@ -1,0 +1,70 @@
+@media only screen and (min-width: 750px) {
+  header {
+    margin: 30px 0 80px 0;
+
+    a .image-logo {
+      height: 40px;
+      width: 40px;
+    }
+
+    span {
+      font-size: 28px;
+      margin-left: 20px;
+    }
+  }
+
+  main {
+    .timer-options {
+      padding: 6px 0px;
+      font-size: 18px;
+      width: 160px;
+    }
+
+    h1#clock-face {
+      font-size: 6em;
+      width: 255px;
+      margin: 80px;
+    }
+
+    .control-buttons-container button {
+      font-size: 20px;
+      margin: 0 10px;
+      width: 100px;
+    }
+  }
+
+  footer span {
+    font-size: 12px;
+    margin-left: 3px;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  header {
+    a .image-logo {
+      height: 50px;
+      width: 50px;
+    }
+
+    span {
+      font-size: 32px;
+    }
+  }
+
+  main {
+    .timer-options {
+      width: 180px;
+    }
+
+    .control-buttons-container button {
+      font-size: 25px;
+      margin: 0 10px;
+      width: 125px;
+    }
+  }
+
+  footer span {
+    margin-left: 4px;
+    font-size: 13px;
+  }
+}
