@@ -31,17 +31,13 @@ a {
 header {
   @include flexCenter();
 
-  margin: 20px 0 40px 0;
+  margin: 20px 0 40px 0;  
 
-  a {
-    font-size: 0;
-
-    .image-logo {
-      height: 25px;
-      width: 25px;
-    }
+  .image-logo {
+    height: 25px;
+    width: 25px;
   }
-
+  
   span {
     margin-left: 10px;
     color: black;
