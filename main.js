@@ -21,7 +21,7 @@ function displayTimer(seconds) {
 	const display = `${minutes < 10 ? '0' : ''}${minutes}:${
 		remainderSeconds < 10 ? '0' : ''
 	}${remainderSeconds}`;
-	clockFace.innerHTML = display;
+	clockFace.innerText = display;
 	document.title = display + ' Pomodoro Timer';
 }
 
@@ -45,10 +45,11 @@ function startTimer(minutes) {
 }
 
 function PlayOrStop(e) {
-	if (timerIsRunning && e.target.innerHTML === 'Stop') {
+	// e.preventDefault() is normally good practice to use
+	if (timerIsRunning && e.target.innerText === 'Stop') {
 		clearInterval(countdown);
 		timerIsRunning = false;
-	} else if (!timerIsRunning && e.target.innerHTML !== 'Stop') {
+	} else if (!timerIsRunning && e.target.innerText !== 'Stop') {
 		minutes === undefined ? startTimer(25) : startTimer(secondsLeft / 60);
 		timerIsRunning = true;
 	}
