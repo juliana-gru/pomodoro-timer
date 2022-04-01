@@ -46,6 +46,7 @@ function startTimer(minutes) {
 
 function PlayOrStop(e) {
 	// e.preventDefault() is normally good practice to use
+	e.preventDefault();
 	if (timerIsRunning && e.target.innerText === 'Stop') {
 		clearInterval(countdown);
 		timerIsRunning = false;
